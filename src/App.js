@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { loadRates } from './actions';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
@@ -11,4 +13,11 @@ class App extends Component {
   }
 }
 
-export default App;
+  const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+      rates: state.currencyState.rates,
+    }
+  }
+
+export default connect(mapStateToProps, { loadRates })(App);
