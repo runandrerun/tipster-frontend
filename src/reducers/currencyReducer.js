@@ -1,5 +1,5 @@
 const initialState = {
-  rates: [],
+  rates: {},
   selectedRate: {},
 }
 
