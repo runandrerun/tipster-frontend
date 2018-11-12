@@ -5,6 +5,7 @@ import configureStore from './store/configureStore';
 import App from './App';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import 'bulma/css/bulma.css'
 
 const store = configureStore()
 
