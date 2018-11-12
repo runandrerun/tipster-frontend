@@ -5,11 +5,10 @@ import { fetchRates } from '../adapters/currencyAdapter';
 export const loadRates = () => {
   console.log("Inside load Rates 1")
   return (dispatch) => {
-    return fetchRates()
+    console.log("Inside Dispatch")
+    fetchRates()
       .then(ratesData => {
-        console.log('Inside Load Rates', ratesData)
-        console.log('Second Load Rates', ratesData)
-        dispatch(setRates(ratesData))
+        dispatch(setRates(ratesData.rates))
       })
   }
 }

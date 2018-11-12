@@ -7,14 +7,15 @@ import CurrencyCard from '../components/CurrencyCard';
 class CurrenciesContainer extends Component {
 
   componentDidMount = () => {
-    loadRates()
+    this.props.loadRates()
   }
 
   currentRates = () => {
-     return this.props.rates.map(currency => {
-       console.log("currentRates", currency)
-       return <CurrencyCard currency={currency} key={currency} />
-     })
+    console.log(this.props.rates)
+     // return this.props.rates.map(currency => {
+     //   console.log("currentRates", currency)
+     //   return <CurrencyCard currency={currency} key={currency} />
+     // })
    }
 
   render() {
