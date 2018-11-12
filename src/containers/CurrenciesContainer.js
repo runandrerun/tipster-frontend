@@ -12,6 +12,7 @@ class CurrenciesContainer extends Component {
 
   currentRates = () => {
      return this.props.rates.map(currency => {
+       console.log("currentRates", currency)
        return <CurrencyCard currency={currency} key={currency} />
      })
    }
