@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { loadRates } from '../actions';
 import { connect } from 'react-redux';
 import CurrencyCard from '../components/CurrencyCard';
+import CurrencySelector from '../components/CurrencySelector';
+import '../styles/nav.css';
 
 
 class CurrenciesContainer extends Component {
@@ -18,7 +20,8 @@ class CurrenciesContainer extends Component {
 
   render() {
     return (
-      <div className="Currency-Container">
+      <div className="info">
+        <CurrencySelector currencies={this.props.rates} />
         { this.props.rates ? this.currentRates() : null }
       </div>
     );
