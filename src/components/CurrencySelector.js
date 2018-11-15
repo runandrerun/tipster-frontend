@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { startBase, selectPrimaryCurrency, selectSecondaryCurrency } from '../actions';
 
 const styles = theme => ({
   root: {
@@ -29,9 +30,17 @@ class SimpleSelect extends React.Component {
     secondaryCurrency: '',
   };
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  handlePrimaryChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+    let primary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
+    selectPrimaryCurrency(primary)
+  }
+
+  handleSecondaryChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+    let secondary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
+    selectSecondaryCurrency(secondary)
+  }
 
   createMenuItems = () => {
     return Object.keys(this.props.currencies).map(currency => {
@@ -49,7 +58,7 @@ class SimpleSelect extends React.Component {
           <InputLabel htmlFor="age-helper">Currency</InputLabel>
           <Select
             value={this.state.primaryCurrency}
-            onChange={this.handleChange}
+            onChange={this.handlePrimaryChange}
             input={<Input name="primaryCurrency" id="currency-helper" />}
           >
             <MenuItem value="">
@@ -64,7 +73,7 @@ class SimpleSelect extends React.Component {
           <InputLabel htmlFor="age-helper">Currency</InputLabel>
           <Select
             value={this.state.secondaryCurrency}
-            onChange={this.handleChange}
+            onChange={this.handleSecondaryChange}
             input={<Input name="secondaryCurrency" id="currency-helper" />}
           >
             <MenuItem value="">

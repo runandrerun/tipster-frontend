@@ -1,11 +1,9 @@
-import { fetchRates } from '../adapters/currencyAdapter';
+import { fetchRates, selectBase } from '../adapters/currencyAdapter';
 
 // LOAD DATA
 
 export const loadRates = () => {
-  console.log("Inside load Rates 1")
   return (dispatch) => {
-    console.log("Inside Dispatch")
     fetchRates()
       .then(ratesData => {
         dispatch(setRates(ratesData.rates))
@@ -13,15 +11,25 @@ export const loadRates = () => {
   }
 }
 
-export const selectPrimaryCurrency = () => {
+export const startBase = (primary) => {
   return (dispatch) => {
-
+    selectBase(primary)
+      .then(ratesData => {
+        dispatch(setRates(ratesData.rates))
+      })
   }
 }
 
-export const selectSecondaryCurrency = () => {
+export const selectPrimaryCurrency = (primary) => {
+  console.log('Inside Selection', primary)
   return (dispatch) => {
+    dispatch(setPrimaryCurrency(primary))
+  }
+}
 
+export const selectSecondaryCurrency = (secondary) => {
+  return (dispatch) => {
+    dispatch(setSecondaryCurrency(secondary))
   }
 }
 // SET DATA
