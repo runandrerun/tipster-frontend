@@ -14,10 +14,10 @@ export const loadRates = () => {
 export const startBase = (primary) => {
   console.log('startBase', primary)
   return (dispatch) => {
-    selectBase(primary)
+    return selectBase(primary)
       .then(ratesData => {
         console.log('Second step', ratesData)
-        dispatch(setRates(ratesData.rates))
+        dispatch(chosenCurrency(ratesData.rates))
       })
   }
 }
@@ -62,4 +62,13 @@ const setSecondaryCurrency = (secondary) => {
       secondary
     }
   }
+}
+
+const chosenCurrency = (rates) => {
+    return {
+      type: 'CHOSEN_RATES',
+      payload: {
+        rates
+      }
+    }
 }

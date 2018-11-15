@@ -34,13 +34,13 @@ class SimpleSelect extends React.Component {
   handlePrimaryChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     let primary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
-    startBase(e.target.value)
+    this.props.startBase(e.target.value)
   }
 
   handleSecondaryChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     let secondary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
-    selectSecondaryCurrency(secondary)
+    this.props.selectSecondaryCurrency(secondary)
   }
 
   createMenuItems = () => {
