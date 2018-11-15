@@ -13,6 +13,17 @@ export const loadRates = () => {
   }
 }
 
+export const selectPrimaryCurrency = () => {
+  return (dispatch) => {
+
+  }
+}
+
+export const selectSecondaryCurrency = () => {
+  return (dispatch) => {
+
+  }
+}
 // SET DATA
 
 const setRates = (rates) => {
@@ -21,6 +32,24 @@ const setRates = (rates) => {
     type: 'LOAD_RATES',
     payload: {
       rates
+    }
+  }
+}
+
+const setPrimaryCurrency = (primary) => {
+  return {
+    type: 'SELECT_PRIMARY',
+    payload: {
+      primary
+    }
+  }
+}
+
+const setSecondaryCurrency = (secondary) => {
+  return {
+    type: 'SELECT_SECONDARY',
+    payload: {
+      secondary
     }
   }
 }

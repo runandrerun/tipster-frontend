@@ -1,6 +1,7 @@
 const initialState = {
   rates: {},
-  selectedRate: {},
+  primaryCurrency: {},
+  secondaryCurrency: {},
 }
 
 const currencyReducer = (state = initialState, action) => {
@@ -11,10 +12,16 @@ const currencyReducer = (state = initialState, action) => {
       rates: action.payload.rates
     }
 
-    case 'SELECT_RATE':
+    case 'SELECT_PRIMARY':
     return {
       ...state,
-      selectedRate: action.payload.rate
+      primaryCurrency: action.payload.primary
+    }
+
+    case 'SELECT_SECONDARY':
+    return {
+      ...state,
+      secondaryCurrency: action.payload.secondary
     }
 
     default:

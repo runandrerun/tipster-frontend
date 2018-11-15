@@ -22,7 +22,7 @@ class CurrenciesContainer extends Component {
     return (
       <div className="info">
         <CurrencySelector currencies={this.props.rates} />
-        { this.props.rates ? this.currentRates() : null }
+
       </div>
     );
   }
@@ -36,3 +36,5 @@ class CurrenciesContainer extends Component {
   }
 
 export default connect(mapStateToProps, { loadRates })(CurrenciesContainer);
+
+// { this.props.rates ? this.currentRates() : null }

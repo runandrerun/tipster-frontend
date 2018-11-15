@@ -25,7 +25,8 @@ const styles = theme => ({
 
 class SimpleSelect extends React.Component {
   state = {
-    currency: '',
+    primaryCurrency: '',
+    secondaryCurrency: '',
   };
 
   handleChange = event => {
@@ -47,9 +48,9 @@ class SimpleSelect extends React.Component {
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="age-helper">Currency</InputLabel>
           <Select
-            value={this.state.currency}
+            value={this.state.primaryCurrency}
             onChange={this.handleChange}
-            input={<Input name="currency" id="currency-helper" />}
+            input={<Input name="primaryCurrency" id="currency-helper" />}
           >
             <MenuItem value="">
               <em>None</em>
@@ -62,9 +63,9 @@ class SimpleSelect extends React.Component {
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="age-helper">Currency</InputLabel>
           <Select
-            value={this.state.currency}
+            value={this.state.secondaryCurrency}
             onChange={this.handleChange}
-            input={<Input name="currency" id="currency-helper" />}
+            input={<Input name="secondaryCurrency" id="currency-helper" />}
           >
             <MenuItem value="">
               <em>None</em>
