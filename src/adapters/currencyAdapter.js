@@ -4,6 +4,7 @@ export const fetchRates = () => {
 }
 
 export const selectBase = (selection) => {
+  console.log("Inside SelectBase", selection)
   const base = `https://api.exchangeratesapi.io/latest?base=${selection}`
   return fetch(base).then(res => res.json())
 }

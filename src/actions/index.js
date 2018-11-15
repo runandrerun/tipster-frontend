@@ -12,9 +12,11 @@ export const loadRates = () => {
 }
 
 export const startBase = (primary) => {
+  console.log('startBase', primary)
   return (dispatch) => {
     selectBase(primary)
       .then(ratesData => {
+        console.log('Second step', ratesData)
         dispatch(setRates(ratesData.rates))
       })
   }

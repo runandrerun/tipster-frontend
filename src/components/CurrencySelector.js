@@ -8,6 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { startBase, selectPrimaryCurrency, selectSecondaryCurrency } from '../actions';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
   root: {
@@ -33,7 +34,7 @@ class SimpleSelect extends React.Component {
   handlePrimaryChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     let primary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
-    selectPrimaryCurrency(primary)
+    startBase(e.target.value)
   }
 
   handleSecondaryChange = e => {
@@ -95,4 +96,4 @@ SimpleSelect.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleSelect);
+export default connect(null, { startBase, selectPrimaryCurrency, selectSecondaryCurrency })(withStyles(styles)(SimpleSelect));
