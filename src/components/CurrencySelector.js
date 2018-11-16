@@ -35,6 +35,7 @@ class SimpleSelect extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
     let primary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
     this.props.startBase(e.target.value)
+    this.props.selectPrimaryCurrency(primary)
   }
 
   handleSecondaryChange = e => {
