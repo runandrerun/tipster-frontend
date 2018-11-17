@@ -1,0 +1,40 @@
+.selectors {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .pawticulars-title {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+}
+
+.pawticulars-title h1 {
+  font-family: script;
+  color: #FFADB9;
+  font-size: 90px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+ /* .button-text {
+  text-align: center;
+  margin: 5px;
+}
+
+.subheader {
+  font-family: script;
+  text-align: center;
+  color: #FFADB9;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.subheader h2 {
+  font-family: script;
+} */

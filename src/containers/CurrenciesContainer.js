@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CurrencyCard from '../components/CurrencyCard';
 import CurrencySelector from '../components/CurrencySelector';
 import '../styles/nav.css';
-
+import '../styles/layout.css'
 
 class CurrenciesContainer extends Component {
 
@@ -20,9 +20,10 @@ class CurrenciesContainer extends Component {
 
   render() {
     return (
-      <div className="info">
-        <CurrencySelector currencies={this.props.rates} />
-
+      <div className="selectors">
+        <div className="info">
+          <CurrencySelector currencies={this.props.rates} />
+        </div>
       </div>
     );
   }
