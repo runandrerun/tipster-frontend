@@ -21,12 +21,14 @@ class CurrenciesContainer extends Component {
 
   render() {
     return (
-      <div className="selectors">
-        <div className="info">
-          <CurrencySelector currencies={this.props.rates} />
-          <AmountField />
+      <React.Fragment>
+        <div className="selectors">
+          <div className="info">
+            <CurrencySelector currencies={this.props.rates} />
+            <AmountField />
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

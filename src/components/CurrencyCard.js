@@ -43,16 +43,18 @@ import '../styles/nav.css';
 class CurrencyCard extends Component {
   render() {
     return (
-      <div className="currency-card">
-      <Paper elevation={1}>
-          <Typography variant="headline" component="h3">
-            { this.props.currency }
-          </Typography>
-          <Typography component="p">
-            { this.props.value }
-          </Typography>
-        </Paper>
-      </div>
+      <React.Fragment>
+        <div className="currency-card">
+          <Paper elevation={1}>
+            <Typography variant="headline" component="h3">
+              { this.props.currency }
+            </Typography>
+            <Typography component="p">
+              { this.props.value }
+            </Typography>
+          </Paper>
+        </div>
+      </React.Fragment>
     );
   }
 }
