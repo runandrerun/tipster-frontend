@@ -3,6 +3,7 @@ import { loadRates } from '../actions';
 import { connect } from 'react-redux';
 import CurrencyCard from '../components/CurrencyCard';
 import CurrencySelector from '../components/CurrencySelector';
+import AmountField from '../components/AmountField';
 import '../styles/nav.css';
 import '../styles/layout.css'
 
@@ -23,6 +24,7 @@ class CurrenciesContainer extends Component {
       <div className="selectors">
         <div className="info">
           <CurrencySelector currencies={this.props.rates} />
+          <AmountField />
         </div>
       </div>
     );
