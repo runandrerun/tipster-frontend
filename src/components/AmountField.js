@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
   container: {
@@ -53,8 +54,15 @@ class AmountField extends React.Component {
     )};
   };
 
-AmountField.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+  AmountField.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
 
-export default withStyles(styles)(AmountField);
+  const mapStateToProps = (state) => {
+    console.log(state.currencyState.rates.USD)
+    return {
+      rates: state.currencyState.rates
+    }
+  }
+
+export default connect(mapStateToProps, null )(withStyles(styles)(AmountField));

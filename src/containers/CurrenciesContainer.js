@@ -36,7 +36,7 @@ class CurrenciesContainer extends Component {
   const mapStateToProps = (state) => {
     console.log(state.currencyState.rates.USD)
     return {
-      rates: state.currencyState.rates,
+      rates: state.currencyState.rates
     }
   }
 
