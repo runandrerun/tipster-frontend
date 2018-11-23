@@ -43,7 +43,7 @@ class AmountField extends React.Component {
       <TextField
           id="standard-read-only-input"
           label="Conversion Amount"
-          defaultValue={this.props.rates ? `${this.props.rates['BGN']}` : ""}
+          defaultValue={this.props.secondaryCurrency ? `${this.props.secondaryCurrency['rate']}` : ""}
           className={classes.textField}
           margin="normal"
           InputProps={{
@@ -62,7 +62,8 @@ class AmountField extends React.Component {
   const mapStateToProps = (state) => {
     console.log(state.currencyState.rates.USD)
     return {
-      rates: state.currencyState.rates
+      rates: state.currencyState.rates,
+      secondaryCurrency: state.currencyState.secondaryCurrency,
     }
   }
 
