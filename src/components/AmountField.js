@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
-import { conversion } from '../handlers/conversion'; 
+import { conversion } from '../handlers/conversion';
 
 const styles = theme => ({
   container: {
@@ -43,7 +43,7 @@ class AmountField extends React.Component {
       <TextField
           id="standard-read-only-input"
           label="Conversion Amount"
-          defaultValue=""
+          defaultValue={this.props.rates ? `${this.props.rates['BGN']}` : ""}
           className={classes.textField}
           margin="normal"
           InputProps={{
