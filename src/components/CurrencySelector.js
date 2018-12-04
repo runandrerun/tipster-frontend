@@ -24,7 +24,6 @@ const styles = theme => ({
   },
 });
 
-
 class SimpleSelect extends React.Component {
   state = {
     primaryCurrency: '',
@@ -36,26 +35,25 @@ class SimpleSelect extends React.Component {
     let primary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
     this.props.startBase(e.target.value)
     this.props.selectPrimaryCurrency(primary)
-  }
+  };
 
   handleSecondaryChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     let secondary = {name: e.target.value, rate: this.props.currencies[`${e.target.value}`]}
     this.props.selectSecondaryCurrency(secondary)
-  }
+  };
 
   createMenuItems = () => {
     return Object.keys(this.props.currencies).map(currency => {
       return <MenuItem value={currency} key={currency}>{`${currency}`}</MenuItem>
-    })
-  }
+    });
+  };
 
   render() {
     const { classes } = this.props;
 
     return (
       <form className={classes.root} autoComplete="off">
-
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="age-helper">Currency</InputLabel>
           <Select
@@ -85,13 +83,10 @@ class SimpleSelect extends React.Component {
           </Select>
           <FormHelperText>Select Conversion Currency</FormHelperText>
         </FormControl>
-
-
-
       </form>
     );
-  }
-}
+  };
+};
 
 SimpleSelect.propTypes = {
   classes: PropTypes.object.isRequired,

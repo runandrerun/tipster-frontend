@@ -25,13 +25,12 @@ const styles = theme => ({
   },
 });
 
-
 class AmountField extends React.Component {
 
   render() {
 
     const { classes } = this.props;
-
+    console.log(this.props.secondary['rate'])
     return (
       <React.Fragment>
       <TextField
