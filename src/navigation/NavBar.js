@@ -28,7 +28,7 @@ function SimpleAppBar(props) {
       </div>
     </div>
   );
-}
+};
 
 SimpleAppBar.propTypes = {
   classes: PropTypes.object.isRequired,

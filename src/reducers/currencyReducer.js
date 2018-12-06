@@ -3,37 +3,37 @@ const initialState = {
   chosenRates: [],
   primaryCurrency: {},
   secondaryCurrency: {},
-}
+};
 
 const currencyReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'LOAD_RATES':
     return {
       ...state,
-      rates: action.payload.rates
-    }
+      rates: action.payload.rates,
+    };
 
     case 'CHOSEN_RATES':
     return {
       ...state,
-      chosenRates: action.payload.rates
-    }
+      chosenRates: action.payload.rates,
+    };
 
     case 'SELECT_PRIMARY':
     return {
       ...state,
       primaryCurrency: action.payload.primary
-    }
+    };
 
     case 'SELECT_SECONDARY':
     return {
       ...state,
-      secondaryCurrency: action.payload.secondary
-    }
+      secondaryCurrency: action.payload.secondary,
+    };
 
     default:
-    return state
-  }
-}
+    return state;
+  };
+};
 
 export default currencyReducer;
