@@ -5,7 +5,7 @@ import './App.css';
 
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -14,6 +14,4 @@ class App extends Component {
       </div>
     );
   }
-}
-
-export default App;
+};
